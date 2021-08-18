@@ -14,12 +14,19 @@ html,body{
 
 input,button{font-family:inherit;font-size:inherit;cursor:pointer;}
 
+button:hover{
+    filter:brightness(80%);
+    box-shadow:5px 5px 1rem rgba(0,0,0,.1);
+}
+
 h1{
     margin-bottom:1em;
     font-size:1.5rem;
 }
 
 #sect-ipt{
+    display:flex;flex-wrap:wrap;
+    justify-content:flex-end; align-items:center;
     position:relative;
     width:var(--wid); 
     background:#fff;
@@ -49,13 +56,14 @@ h1{
     border-radius:4px 4px 0 0;
 }
 
-#btn-add{
-    display:block;position:relative;
-    padding:.5em 2em;
-    margin:0 0 0 auto;
+#sect-ipt button{
+    display:inline-block;position:relative;
+    padding:.5em 2em; margin-left:1em;
     border:1px solid #aaa;
     font-size:14px; color:#666;
 }
+
+    #sect-ipt button#btn-reset{background:transparent;border:none;font-weight:bold;color:brown;}
 
 #btn-confirm{
     display:block;position:relative;
