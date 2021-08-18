@@ -1,5 +1,6 @@
 const ipt = document.getElementById('ipt');
 const btn_add = document.getElementById('btn-add');
+const btn_reset = document.getElementById('btn-reset');
 const btn_confirm = document.getElementById('btn-confirm');
 const area_result = document.getElementById('area-result');
 const sel_year = document.querySelectorAll('[name = "sel_year"]');
@@ -55,7 +56,7 @@ function val_month_julian(month){
         DAYS.prev += monthARR[i];
     }
     return DAYS.prev;
-}
+}//val_month_julian
 
 function to_normal_day(val){
     if(!val){return;}
@@ -89,7 +90,7 @@ function to_normal_day(val){
     DAYS.day = val - val_month_julian(DAYS.month - 1);
 
     make_result(DAYS.month, DAYS.day)
-}
+}//to_normal_day
 
 
 function make_result(month,day){
@@ -98,9 +99,19 @@ function make_result(month,day){
     new_input.value = `${month}월 ${day}일`;
     new_input.readOnly = true;
     area_result.appendChild(new_input);
-}
+}//make_result
 
+
+function reset_ipt(){
+    const curr_ipt = ipt.getElementsByTagName('INPUT');
+    for(let val of curr_ipt){
+        val.value = "";
+    }
+
+}//reset_ipt
 
 /* 실행 */
 btn_add.addEventListener('click',make_ipt);
 btn_confirm.addEventListener('click', cacul_ipt);
+btn_reset.addEventListener('click', reset_ipt);
+
