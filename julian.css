@@ -46,7 +46,8 @@ h1{
     margin-bottom:1rem;
 }
 
-#sect-ipt [type="number"]{
+#sect-ipt [type="number"],
+#sect-ipt [type="text"]{
     display:block;
     width:max(18%, 4em);
     padding:.5em 0 .5em .7em; 
