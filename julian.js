@@ -30,7 +30,7 @@ function cacul_ipt(){
     
     const vals = ipt.getElementsByTagName('INPUT');
     for(let val of vals){
-        to_normal_day(val.value);
+        to_normal_day(eval(val.value));
     }
 }//cacul_ipt
 
