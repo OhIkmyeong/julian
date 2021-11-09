@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>줄리안 데이 계산기</title>
+<link href="./julian.css" rel="stylesheet" type="text/css"/>
+<script src="./julian.js" defer></script>
+<script>
+    const jul_URL = 'https://landweb.modaps.eosdis.nasa.gov/browse/calendar.html';
+</script>
+</head>
+<body>
+
+<h1 onclick="window.open(jul_URL,'_blank');">줄리안 데이 계산기</h1>
+
+<section id="sect-ipt">
+    <div style="width:100%; margin-bottom:.5em; padding-left:.5em;">
+        <label><input type="radio" name="sel_year" value="leap"> <span>윤년(LEAP)</span></label>
+        <label><input type="radio" name="sel_year" value="regular" checked> <span>평년(REGULAR)</span></label>
+    </div>
+
+    <article id="ipt">
+        <input type="text" value="365-364"/> <!-- 1월 1일-->
+        <input type="text" value="31"/> <!-- 1월 31일-->
+        <input type="text" value="32"/> <!-- 2월 1일-->
+        <input type="text" value="59"/> <!-- 2월 28일-->
+        <input type="text" value="60"/> <!-- 3월 1일 --> <!-- 윤년 : 2월 29일 -->
+        <input type="text" value="335"/> <!-- 12월 1일 -->
+        <input type="text" value="365"/> <!-- 12월 31일 -->
+        <input type="text" value="188"/> <!-- 7월 7일 -->
+    </article><!-- ipt -->
+
+    <button id="btn-reset">리셋</button>
+    <button id="btn-add">추가</button>
+</section><!-- sect-ipt -->
+
+<button id="btn-confirm">계산하기</button>
+
+<article id="area-result">
+</article><!-- area-result -->
+
+</body>
+</html>
